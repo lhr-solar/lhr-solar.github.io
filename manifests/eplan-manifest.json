@@ -1,0 +1,46 @@
+{
+  "name": ".",
+  "files": [
+
+  ],
+  "folders": [
+    {
+      "name": "Daybreak",
+      "files": [
+
+      ],
+      "folders": [
+        {
+          "name": "MPPT Enclosure",
+          "files": [
+            { "name": "MPPT Enclosure.pdf" },
+            { "name": "index.html" }
+          ],
+          "folders": [
+
+          ]
+        },
+        {
+          "name": "Motor Controller Enclosure",
+          "files": [
+            { "name": "Motor Controller Enclosure.pdf" },
+            { "name": "index.html" }
+          ],
+          "folders": [
+
+          ]
+        },
+        {
+          "name": "Supplemental Battery Enclosure",
+          "files": [
+            { "name": "Supplemental Battery Enclosure.pdf" },
+            { "name": "index.html" }
+          ],
+          "folders": [
+
+          ]
+        }
+      ]
+    }
+  ]
+}
