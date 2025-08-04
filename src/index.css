@@ -66,3 +66,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.mantine-Group-root {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.5rem !important; /* Mantine spacing uses inline CSS var */
+}
