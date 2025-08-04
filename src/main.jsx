@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 
 import App from './App.jsx';
-import EPlan from './pages/EPlan.jsx';
+import EPlan from './pages/Eplan.jsx';
 import EplanVehicle from './pages/EplanVehicle.jsx';
 import EplanProject from './pages/EplanProject.jsx';
 
