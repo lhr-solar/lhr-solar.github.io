@@ -19,6 +19,7 @@ function App() {
             <header className="nav-header">
                 <div className="nav-container">
                     <div className="logo">
+                        <img src="/logo.webp" alt="Longhorn Racing Solar Logo" className="logo-img" />
                         <span className="logo-text">Longhorn Racing Solar</span>
                     </div>
                     <nav className="nav-menu">
