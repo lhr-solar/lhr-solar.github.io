@@ -293,6 +293,12 @@
   background: linear-gradient(to right, transparent, white 50%, transparent);
 }
 
+@media (max-width: 768px) {
+  .animated-word-container::after {
+    display: none;
+  }
+}
+
 .animated-word {
   display: inline-block;
   background: linear-gradient(135deg, #ff6b35, #f7931e, #ffcd3c);
