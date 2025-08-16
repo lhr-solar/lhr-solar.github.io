@@ -275,8 +275,8 @@
 
 .animated-word-container {
   display: inline-block;
-  width: 320px; /* match longest word */
-  min-width: 320px;
+  width: 555px; /* match longest word */
+  min-width: 555px;
   text-align: left;
   position: relative;
 }
