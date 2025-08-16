@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {useEffect, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
 import './App.css';
 
 function App() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const adjectives = ['Excellence', 'Innovation', 'Precision', 'Speed', 'Sustainability', 'Performance'];
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -15,23 +16,6 @@ function App() {
 
     return (
         <div className="app">
-            {/* Navigation Header */}
-            <header className="nav-header">
-                <div className="nav-container">
-                    <div className="logo">
-                        <img src="/logo.webp" alt="Longhorn Racing Solar Logo" className="logo-img" />
-                        <span className="logo-text">Longhorn Racing Solar</span>
-                    </div>
-                    <nav className="nav-menu">
-                        <a href="#" className="nav-link">Dashboard</a>
-                        <a href="#" className="nav-link">Tools</a>
-                        <a href="#" className="nav-link">Projects</a>
-                        <a href="#" className="nav-link">Documentation</a>
-                        <a href="#" className="nav-link">Team</a>
-                    </nav>
-                </div>
-            </header>
-
             {/* Background Video */}
             <div className="video-background">
                 <video
@@ -44,14 +28,49 @@ function App() {
                     onLoadStart={() => console.log('Video started loading')}
                     onCanPlay={() => console.log('Video can play')}
                 >
-                    <source src="/daybreak.webm" type="video/webm" />
+                    <source src="/daybreak.webm" type="video/webm"/>
                     {/* Fallback for browsers that don't support WebM */}
-                    <source src="/daybreak.mp4" type="video/mp4" />
+                    <source src="/daybreak.mp4" type="video/mp4"/>
                     {/* Fallback content */}
                     <div className="video-fallback">Video not supported</div>
                 </video>
                 <div className="video-overlay"></div>
             </div>
+
+            {/* Navigation Header */}
+            <header className="nav-header">
+                <div className="nav-container">
+                    {/* Logo */}
+                    <div className="logo">
+                        <img
+                            src="/logo.webp"
+                            alt="Longhorn Racing Solar Logo"
+                            className="logo-img"
+                        />
+                        <span className="logo-text">Longhorn Racing Solar</span>
+                    </div>
+
+                    {/* Hamburger Button */}
+                    <button
+                        className={`hamburger ${isOpen ? "open" : ""}`}
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle navigation"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    {/* Navigation Links */}
+                    <nav className={`nav-menu ${isOpen ? "active" : ""}`}>
+                        <a href="#" className="nav-link">Dashboard</a>
+                        <a href="#" className="nav-link">Tools</a>
+                        <a href="#" className="nav-link">Projects</a>
+                        <a href="#" className="nav-link">Documentation</a>
+                        <a href="#" className="nav-link">Team</a>
+                    </nav>
+                </div>
+            </header>
 
             {/* Main Content */}
             <main className="main-content">
@@ -59,19 +78,19 @@ function App() {
                     <h1 className="hero-title">
                         <span className="fixed-word">Engineering </span>
                         <span className="animated-word-container">
-              <AnimatePresence mode="wait">
-                <motion.span
-                    key={adjectives[currentWordIndex]}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="animated-word"
-                >
-                  {adjectives[currentWordIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={adjectives[currentWordIndex]}
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                exit={{opacity: 0, y: -20}}
+                                transition={{duration: 0.5}}
+                                className="animated-word"
+                            >
+                                {adjectives[currentWordIndex]}
+                            </motion.span>
+                        </AnimatePresence>
+                        </span>
                     </h1>
                     <p className="hero-subtitle">
                         Internal tools & resources hub for Longhorn Racing Solar
