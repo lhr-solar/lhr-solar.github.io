@@ -1,11 +1,17 @@
 import {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
+import HeaderDropdown from './components/HeaderDropdown';
 import './App.css';
 
 function App() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const adjectives = ['Excellence', 'Innovation', 'Precision', 'Speed', 'Sustainability', 'Performance'];
     const [isOpen, setIsOpen] = useState(false);
+
+    const documentationItems = [
+        { label: 'Embedded-Sharepoint', href: 'https://lhr-solar.github.io/Embedded-Sharepoint/' },
+        { label: 'Harness-Docs', href: 'https://lhr-solar.github.io/Harness-Docs/' },
+    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -63,11 +69,9 @@ function App() {
 
                     {/* Navigation Links */}
                     <nav className={`nav-menu ${isOpen ? "active" : ""}`}>
-                        <a href="#" className="nav-link">Dashboard</a>
                         <a href="#" className="nav-link">Tools</a>
                         <a href="#" className="nav-link">Projects</a>
-                        <a href="#" className="nav-link">Documentation</a>
-                        <a href="#" className="nav-link">Team</a>
+                        <HeaderDropdown title="Documentation" items={documentationItems} />
                     </nav>
                 </div>
             </header>
@@ -96,8 +100,10 @@ function App() {
                         Internal tools & resources hub for Longhorn Racing Solar
                     </p>
                     <div className="hero-actions">
-                        <button className="cta-button primary">⚡ Dashboard</button>
-                        <button className="cta-button secondary">📂 Quick Links</button>
+                        <a className="cta-button secondary">
+                            <img src="/linktree.png" alt="LinkTree" className="quick-card-logo"/>
+                            Quick Links
+                        </a>
                     </div>
                 </div>
 
@@ -105,10 +111,22 @@ function App() {
                 <div className="quick-access">
                     <h2>Quick Access</h2>
                     <div className="quick-links">
-                        <a href="#" className="quick-card">GitHub</a>
-                        <a href="#" className="quick-card">Slack</a>
-                        <a href="#" className="quick-card">Confluence</a>
-                        <a href="#" className="quick-card">Sharepoint</a>
+                        <a href="https://github.com/lhr-solar" className="quick-card">
+                            <img src="/github.png" alt="GitHub" className="quick-card-logo" />
+                            GitHub
+                        </a>
+                        <a href="https://cloud.wikis.utexas.edu/wiki/spaces/LHRSOLAR/overview" className="quick-card">
+                            <img src="/confluence.png" alt="Confluence" className="quick-card-logo" />
+                            Confluence
+                        </a>
+                        <a href="https://utexas.sharepoint.com/sites/ENGR-LonghornRacing/LHR%20Solar" className="quick-card">
+                            <img src="/sharepoint.png" alt="Sharepoint" className="quick-card-logo" />
+                            Sharepoint
+                        </a>
+                        <a href="https://app.clickup.com/9011033583/home" className="quick-card">
+                            <img src="/clickup.png" alt="ClickUp" className="quick-card-logo" />
+                            ClickUp
+                        </a>
                     </div>
                 </div>
 

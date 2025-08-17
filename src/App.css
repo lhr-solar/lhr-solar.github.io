@@ -342,6 +342,9 @@
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-button.primary {
@@ -391,6 +394,8 @@
 }
 
 .quick-card {
+  display: flex;
+  align-items: center;
   background: rgba(255, 255, 255, 0.08);
   padding: 1rem 2rem;
   border-radius: 12px;
@@ -403,6 +408,11 @@
 .quick-card:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
+}
+
+.quick-card-logo {
+    height: 24px;
+    margin-right: 0.75rem;
 }
 
 /* =========================================================
