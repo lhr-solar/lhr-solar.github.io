@@ -100,9 +100,9 @@ function App() {
                         Internal tools & resources hub for Longhorn Racing Solar
                     </p>
                     <div className="hero-actions">
-                        <a className="cta-button secondary">
+                        <a className="cta-button secondary" target={'_blank'} href={'https://linktr.ee/lhrsolar'}>
                             <img src="/linktree.png" alt="LinkTree" className="quick-card-logo"/>
-                            Quick Links
+                            Linktree
                         </a>
                     </div>
                 </div>
