@@ -34,9 +34,9 @@ function App() {
                     onLoadStart={() => console.log('Video started loading')}
                     onCanPlay={() => console.log('Video can play')}
                 >
-                    <source src="/daybreak.webm" type="video/webm"/>
+                    <source src="/assets/daybreak.webm" type="video/webm"/>
                     {/* Fallback for browsers that don't support WebM */}
-                    <source src="/daybreak.mp4" type="video/mp4"/>
+                    <source src="/assets/daybreak.mp4" type="video/mp4"/>
                     {/* Fallback content */}
                     <div className="video-fallback">Video not supported</div>
                 </video>
@@ -49,7 +49,7 @@ function App() {
                     {/* Logo */}
                     <div className="logo">
                         <img
-                            src="/logo.webp"
+                            src="/assets/logos/logo-transparent.webp"
                             alt="Longhorn Racing Solar Logo"
                             className="logo-img"
                         />
@@ -101,7 +101,7 @@ function App() {
                     </p>
                     <div className="hero-actions">
                         <a className="cta-button secondary" target={'_blank'} href={'https://linktr.ee/lhrsolar'}>
-                            <img src="/linktree.png" alt="LinkTree" className="quick-card-logo"/>
+                            <img src="/assets/linktree.png" alt="LinkTree" className="quick-card-logo"/>
                             Linktree
                         </a>
                     </div>
@@ -112,19 +112,19 @@ function App() {
                     <h2>Quick Access</h2>
                     <div className="quick-links">
                         <a href="https://github.com/lhr-solar" className="quick-card">
-                            <img src="/github.png" alt="GitHub" className="quick-card-logo" />
+                            <img src="/assets/github.png" alt="GitHub" className="quick-card-logo" />
                             GitHub
                         </a>
                         <a href="https://cloud.wikis.utexas.edu/wiki/spaces/LHRSOLAR/overview" className="quick-card">
-                            <img src="/confluence.png" alt="Confluence" className="quick-card-logo" />
+                            <img src="/assets/confluence.png" alt="Confluence" className="quick-card-logo" />
                             Confluence
                         </a>
                         <a href="https://utexas.sharepoint.com/sites/ENGR-LonghornRacing/LHR%20Solar" className="quick-card">
-                            <img src="/sharepoint.png" alt="Sharepoint" className="quick-card-logo" />
+                            <img src="/assets/sharepoint.png" alt="Sharepoint" className="quick-card-logo" />
                             Sharepoint
                         </a>
                         <a href="https://app.clickup.com/9011033583/home" className="quick-card">
-                            <img src="/clickup.png" alt="ClickUp" className="quick-card-logo" />
+                            <img src="/assets/clickup.png" alt="ClickUp" className="quick-card-logo" />
                             ClickUp
                         </a>
                     </div>
