@@ -10,7 +10,8 @@ function App() {
 
     const documentationItems = [
         { label: 'Embedded-Sharepoint', href: 'https://lhr-solar.github.io/Embedded-Sharepoint/' },
-        { label: 'Harness-Docs', href: 'https://lhr-solar.github.io/Harness-Docs/' },
+        { label: 'KiCAD-Sharepoint', href: 'https://lhr-solar.github.io/KiCAD-Sharepoint/' },
+        { label: 'Harness-Docs', href: 'https://lhr-solar.github.io/Harness-Docs/' }
     ];
 
     useEffect(() => {
