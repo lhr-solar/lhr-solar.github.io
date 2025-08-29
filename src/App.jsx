@@ -127,6 +127,10 @@ function App() {
                             <img src="/assets/clickup.png" alt="ClickUp" className="quick-card-logo" />
                             ClickUp
                         </a>
+                        <a href="https://pdm.getbild.com/" className="quick-card">
+                            <img src="/assets/bild.png" alt="Bild PDM" className="quick-card-logo" />
+                            Bild PDM
+                        </a>
                     </div>
                 </div>
 
