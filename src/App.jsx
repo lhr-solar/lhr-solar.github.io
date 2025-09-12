@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
-    const adjectives = ['Excellence', 'Innovation', 'Precision', 'Speed', 'Sustainability', 'Performance'];
+    const adjectives = ['Excellence', 'Innovation', 'Precision', 'Speed', 'Performance'];
     const [isOpen, setIsOpen] = useState(false);
 
     const documentationItems = [
