@@ -85,7 +85,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 40px;
     padding: 1rem 2rem;
     height: 100%;
 }
@@ -537,7 +537,7 @@
 ========================================================= */
 
 /* <= 768px */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .nav-container {
         padding: 1rem;
     }
