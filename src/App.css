@@ -247,7 +247,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2rem 4rem; /* Added bottom padding */
     min-width: 100%;
     min-height: calc(100vh - 60px);
 }
@@ -255,7 +255,7 @@
 .hero-section {
     text-align: center;
     max-width: 900px;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .hero-title {
@@ -377,14 +377,89 @@
     transform: translateY(-3px);
 }
 
-/* =========================================================
-   5. Quick Access
-========================================================= */
-.quick-access {
-    margin-top: 1rem;
-    text-align: center;
+.linktree-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem; /* Add some padding to prevent cutoff on small screens */
+    margin: 0 auto; /* Center the grid */
 }
 
+.linktree-grid .quick-card {
+    flex: 0 1 182px; /* Don't grow, allow shrink, with a basis of 182px */
+    max-width: 182px;
+    min-height: 60px;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem; /* Adjust padding for better text containment */
+}
+
+.quick-card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word; /* Break long words to prevent overflow */
+}
+
+
+.loading-bar {
+    width: 100px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+
+.loading-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, #ff6b35, #f7931e);
+    animation: loadingAnimation 1.5s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.error-message {
+    color: #ff6b35;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   5. Team Links & Quick Access
+========================================================= */
+.team-links,
+.quick-access {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.team-links {
+    margin-top: 0;
+}
+
+.team-links h2,
 .quick-access h2 {
     font-size: 1.6rem;
     margin-bottom: 1.5rem;

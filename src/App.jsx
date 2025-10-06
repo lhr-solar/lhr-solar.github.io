@@ -7,6 +7,9 @@ function App() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const adjectives = ['Excellence', 'Innovation', 'Precision', 'Speed', 'Performance'];
     const [isOpen, setIsOpen] = useState(false);
+    const [linktreeLinks, setLinktreeLinks] = useState([]);
+    const [loadingLinks, setLoadingLinks] = useState(true);
+    const [errorLinks, setErrorLinks] = useState(null);
 
     const documentationItems = [
         { label: 'Embedded-Sharepoint', href: 'https://lhr-solar.github.io/Embedded-Sharepoint/' },
@@ -14,12 +17,43 @@ function App() {
         { label: 'Harness-Docs', href: 'https://lhr-solar.github.io/Harness-Docs/' }
     ];
 
+    async function getLinktreeLinks() {
+        const url = `https://lhrsolar-links.netlify.app/.netlify/functions/get-links`;
+
+        return JSON.parse(await fetch(url).then(res => res.text()))
+    }
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentWordIndex((prev) => (prev + 1) % adjectives.length);
         }, 2500);
         return () => clearInterval(interval);
     }, [adjectives.length]);
+
+    useEffect(() => {
+        const fetchStartTime = Date.now();
+
+        getLinktreeLinks('lhrsolar')
+            .then(links => {
+                const elapsedTime = Date.now() - fetchStartTime;
+                const remainingTime = 750 - elapsedTime;
+
+                if (remainingTime > 0) {
+                    setTimeout(() => {
+                        setLinktreeLinks(links);
+                        setLoadingLinks(false);
+                    }, remainingTime);
+                } else {
+                    setLinktreeLinks(links);
+                    setLoadingLinks(false);
+                }
+            })
+            .catch(err => {
+                console.error("Failed to fetch Linktree links:", err);
+                setErrorLinks(err.message);
+                setLoadingLinks(false);
+            });
+    }, []);
 
     return (
         <div className="app">
@@ -101,12 +135,24 @@ function App() {
                         Internal tools & resources hub for Longhorn Racing Solar
                     </p>
                     <div className="hero-actions">
-                        <a className="cta-button secondary" target={'_blank'} href={'https://linktr.ee/lhrsolar'}>
-                            <img src="/assets/linktree.png" alt="LinkTree" className="quick-card-logo"/>
-                            Linktree
-                        </a>
+                        {loadingLinks && <div className="loading-bar"></div>}
+                        {errorLinks && <p className="error-message">Failed to load links. Please try again later.</p>}
                     </div>
                 </div>
+
+                {/* Team Links */}
+                {!loadingLinks && !errorLinks && linktreeLinks.length > 0 && (
+                    <div className="team-links">
+                        <h2>Team Links</h2>
+                        <div className="linktree-grid">
+                            {linktreeLinks.map(link => (
+                                <a key={link.url} className="quick-card tooltip" target={'_blank'} href={link.url} rel="noopener noreferrer" data-tooltip={link.title}>
+                                    <span className="quick-card-title">{link.title}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Quick-Access Panel */}
                 <div className="quick-access">
