@@ -20,7 +20,18 @@ function App() {
     async function getLinktreeLinks() {
         const url = `https://lhrsolar-links.netlify.app/.netlify/functions/get-links`;
 
-        return JSON.parse(await fetch(url).then(res => res.text()))
+        const json = JSON.parse(await fetch(url).then(res => res.text()));
+
+        const filtered = json
+            .filter(link => !link.url.toLowerCase().includes("github"))
+            .map(link => ({
+                title: link.title,
+                url: link.url,
+            }));
+
+        return filtered;
+
+        return json
     }
 
     useEffect(() => {
