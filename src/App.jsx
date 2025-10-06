@@ -194,7 +194,7 @@ function App() {
                 {/* Floating Stats */}
                 <div className="floating-stats">
                     <div className="stat-card">
-                        <div className="stat-number">15+</div>
+                        <div className="stat-number">35+</div>
                         <div className="stat-label">Years Racing</div>
                     </div>
                     <div className="stat-card">
