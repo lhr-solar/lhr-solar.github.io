@@ -245,7 +245,7 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center */
     align-items: center;
     padding: 0 2rem 4rem; /* Added bottom padding */
     min-width: 100%;
@@ -256,6 +256,7 @@
     text-align: center;
     max-width: 900px;
     margin-bottom: 0;
+    padding-top: 5vh; /* Added padding-top */
 }
 
 .hero-title {
@@ -324,16 +325,16 @@
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
     font-weight: 300;
 }
 
 .hero-actions {
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 60px; /* Set a min-height to reserve space for one row of links */
 }
 
 .cta-button {
@@ -415,7 +416,6 @@
     border-radius: 2px;
     position: relative;
     overflow: hidden;
-    margin: 2rem auto;
 }
 
 .loading-bar::before {
@@ -467,6 +467,10 @@
     background: linear-gradient(135deg, #ff6b35, #f7931e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.qa-bottom {
+    margin-bottom: 2rem;
 }
 
 .quick-links {
@@ -568,7 +572,7 @@
 
 /* =========================================================
    8. Responsive Tweaks
-========================================================= */
+======================x=================================== */
 
 /* <= 768px */
 @media (max-width: 840px) {

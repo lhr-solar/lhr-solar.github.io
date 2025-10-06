@@ -144,16 +144,18 @@ function App() {
                     <p className="hero-subtitle">
                         Internal tools & resources hub for Longhorn Racing Solar
                     </p>
-                    <div className="hero-actions">
-                        {loadingLinks && <div className="loading-bar"></div>}
-                        {errorLinks && <p className="error-message">Failed to load links. Please try again later.</p>}
-                    </div>
                 </div>
 
                 {/* Team Links */}
-                {!loadingLinks && !errorLinks && linktreeLinks.length > 0 && (
-                    <div className="team-links">
-                        <h2>Team Links</h2>
+                <div className="team-links">
+                    <h2>Team Links</h2>
+                    {(loadingLinks || errorLinks) &&
+                        <div className="hero-actions">
+                            {loadingLinks && <div className="loading-bar"></div>}
+                            {errorLinks && <p className="error-message">Failed to load links. Please try again later.</p>}
+                        </div>
+                    }
+                    {!loadingLinks && !errorLinks && linktreeLinks.length > 0 && (
                         <div className="linktree-grid">
                             {linktreeLinks.map(link => (
                                 <a key={link.url} className="quick-card tooltip" target={'_blank'} href={link.url} rel="noopener noreferrer" data-tooltip={link.title}>
@@ -161,11 +163,11 @@ function App() {
                                 </a>
                             ))}
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
 
                 {/* Quick-Access Panel */}
-                <div className="quick-access">
+                <div className="quick-access qa-bottom">
                     <h2>Quick Access</h2>
                     <div className="quick-links">
                         <a href="https://github.com/lhr-solar" className="quick-card">
