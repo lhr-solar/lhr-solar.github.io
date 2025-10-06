@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
+import { FaLinkedin, FaInstagram, FaHeart } from 'react-icons/fa';
 import HeaderDropdown from './components/HeaderDropdown';
 import './App.css';
 
@@ -30,8 +31,6 @@ function App() {
             }));
 
         return filtered;
-
-        return json
     }
 
     useEffect(() => {
@@ -210,9 +209,27 @@ function App() {
             </main>
 
             {/* Scroll Indicator */}
-            <div className="scroll-indicator">
-                <div className="scroll-arrow"></div>
-            </div>
+
+            <footer className="app-footer">
+                <div className="footer-content">
+                    <div className="footer-left">
+                        <span className="footer-copyright">
+                            &copy; 2025 Longhorn Racing Solar
+                        </span>
+                        <span className="footer-made-in">
+                            Made with <FaHeart className="heart-icon" /> in Austin
+                        </span>
+                    </div>
+                    <div className="footer-social">
+                        <a href="https://linkedin.com/company/longhorn-racing/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin className="footer-logo" />
+                        </a>
+                        <a href="https://www.instagram.com/longhornracing" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram className="footer-logo" />
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }
