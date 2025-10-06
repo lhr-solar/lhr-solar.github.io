@@ -24,7 +24,7 @@ function App() {
         const json = JSON.parse(await fetch(url).then(res => res.text()));
 
         const filtered = json
-            .filter(link => !link.url.toLowerCase().includes("github"))
+            .filter(link => !link.url.toLowerCase().includes("lhrsolar"))
             .map(link => ({
                 title: link.title,
                 url: link.url,
