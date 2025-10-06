@@ -19,7 +19,7 @@ function App() {
     ];
 
     async function getLinktreeLinks() {
-        const url = `https://lhrsolar-links.netlify.app/.netlify/functions/get-links`;
+        const url = `https://lhrsolar-functions.netlify.app/.netlify/functions/get-linktree-links`;
 
         const json = JSON.parse(await fetch(url).then(res => res.text()));
 
