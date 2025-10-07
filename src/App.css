@@ -660,9 +660,9 @@
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    margin-inline: 50px;
 }
 
 .footer-left {
