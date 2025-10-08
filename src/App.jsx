@@ -13,9 +13,9 @@ function App() {
     const [errorLinks, setErrorLinks] = useState(null);
 
     const documentationItems = [
-        { label: 'Embedded-Sharepoint', href: 'https://lhr-solar.github.io/Embedded-Sharepoint/' },
-        { label: 'KiCAD-Sharepoint', href: 'https://lhr-solar.github.io/KiCAD-Sharepoint/' },
-        { label: 'Harness-Docs', href: 'https://lhr-solar.github.io/Harness-Docs/' }
+        { label: 'Embedded-Sharepoint', href: 'https://lhrsolar.org/Embedded-Sharepoint/' },
+        { label: 'KiCAD-Sharepoint', href: 'https://lhrsolar.org/KiCAD-Sharepoint/' },
+        { label: 'Harness-Docs', href: 'https://lhrsolar.org/Harness-Docs/' }
     ];
 
     async function getLinktreeLinks() {
